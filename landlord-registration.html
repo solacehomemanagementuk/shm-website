@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a Solace Home Management landlord account after verifying your email address.">
+  <meta name="theme-color" content="#F7F3EA">
+  <title>Landlord Registration | Solace Home Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page registration-page auth-page">
+  <header class="site-header">
+    <div class="header-main">
+      <a class="brand brand-header brand-header-home" href="index.html#top" aria-label="Solace Home Management home">
+        <img class="brand-logo" src="assets/solace-logo.png" alt="Solace Home Management house emblem">
+        <span class="brand-wording"><span class="brand-title">SOLACE HOME MANAGEMENT</span><span class="brand-tagline">Your Comfort, Our Responsibility</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">Menu</button>
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="overview.html">Overview</a><a href="services.html">Our Services</a><a href="browse-properties.html">Browse Properties</a><a href="list-your-property.html">List Your Property</a><a href="register-account.html">Register Account</a><a href="shm-portal.html">SHM Login</a><a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="page-hero registration-page-hero">
+      <p class="eyebrow">FOR LANDLORDS &amp; PROPERTY OWNERS</p>
+      <h1>Landlord Registration</h1>
+      <p>Create a landlord account to connect with Solace Home Management. Verify your email address to complete registration.</p>
+    </section>
+    <section class="auth-section">
+      <div class="auth-card">
+        <div class="auth-card-heading"><p class="eyebrow">LANDLORD ACCOUNT</p><h2>Create your account</h2><p>All fields are required. Your account is created only after email verification.</p></div>
+        <form class="auth-form" data-registration-form data-role="landlord" novalidate>
+          <label>Full Name<input name="fullName" type="text" autocomplete="name" maxlength="120" required></label>
+          <label>Phone Number<input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" required></label>
+          <label>Email Address<input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+          <label>Username<input name="username" type="text" autocomplete="username" minlength="3" maxlength="32" required></label>
+          <label>Password<span class="password-field"><input name="password" type="password" autocomplete="new-password" minlength="12" maxlength="128" required><button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button></span><small>Use 12 to 128 characters.</small></label>
+          <label>Confirm Password<span class="password-field"><input name="confirmPassword" type="password" autocomplete="new-password" minlength="12" maxlength="128" required><button class="password-toggle" type="button" aria-label="Show confirm password" aria-pressed="false">Show</button></span></label>
+          <button class="button button-dark auth-submit" type="submit">Continue to Email Verification <span aria-hidden="true">→</span></button>
+          <p class="auth-message" data-auth-message role="status" aria-live="polite"></p>
+        </form>
+        <section class="verification-panel" data-verification-panel hidden>
+          <div class="auth-card-heading"><p class="eyebrow">EMAIL VERIFICATION</p><h2>Verify Your Email Address</h2><p>A six-digit verification code has been sent to <strong data-verification-email></strong>. It expires in 10 minutes.</p></div>
+          <form class="auth-form" data-verification-form novalidate>
+            <label>Six-digit verification code<input name="otp" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" required></label>
+            <button class="button button-dark auth-submit" type="submit">Verify Email <span aria-hidden="true">→</span></button>
+            <p class="auth-message" data-verification-message role="status" aria-live="polite"></p>
+          </form>
+          <div class="resend-row"><button class="text-button" type="button" data-resend-otp disabled>Resend OTP</button><span data-resend-countdown>Request another code in 60 seconds.</span></div>
+        </section>
+        <section class="auth-success" data-registration-success hidden>
+          <span class="auth-success-icon" aria-hidden="true">✓</span><h2>Account created successfully</h2>
+          <p>Your SHM account has been successfully created and your email address has been verified.</p>
+          <p>To access your dashboard, please go to SHM Login and sign in using your registered username or email address and password.</p>
+          <a class="button button-dark" href="landlord-login.html">Go to SHM Login <span aria-hidden="true">→</span></a>
+        </section>
+        <p class="auth-alternate">Already registered? <a href="landlord-login.html">Landlord Login</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

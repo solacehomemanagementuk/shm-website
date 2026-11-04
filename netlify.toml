@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/auth-proxy/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/account/*"
+  to = "/.netlify/functions/auth-proxy/account/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self' data:; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; upgrade-insecure-requests"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"

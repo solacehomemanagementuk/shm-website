@@ -1,0 +1,47 @@
+databases:
+  - name: shm-postgres
+    databaseName: shm
+    user: shm_app
+    plan: basic-256mb
+    ipAllowList: []
+
+services:
+  - type: web
+    name: shm-auth-api
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    preDeployCommand: npm run db:migrate
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: APP_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: shm-postgres
+          property: connectionString
+      - key: DATABASE_SSL
+        value: "false"
+      - key: DATABASE_SSL_REJECT_UNAUTHORIZED
+        value: "true"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PROXY_SHARED_SECRET
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_SECURE
+        value: "false"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM
+        sync: false

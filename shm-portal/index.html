@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B2340"><title>SHM Portal | Property Operations</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><img class="brand-logo" src="assets/solace-logo.png" alt="Solace Home Management — Your Comfort, Our Responsibility"><span><b>SHM Portal</b><small>Solace Home Management</small></span></div>
+    <div class="workspace-label">WORKSPACE</div>
+    <nav id="sideNav" class="side-nav" aria-label="Portal sections">
+      <button class="nav-item active" data-view="dashboard"><span>▦</span> Dashboard</button>
+      <button class="nav-item" data-view="landlordLeads"><span>♧</span> Landlord Leads</button>
+      <button class="nav-item" data-view="landlords"><span>♙</span> Landlords</button>
+      <button class="nav-item" data-view="tenantLeads"><span>♧</span> Tenant Leads</button>
+      <button class="nav-item" data-view="tenants"><span>♙</span> Tenants</button>
+      <button class="nav-item" data-view="properties"><span>⌂</span> Properties</button>
+      <button class="nav-item" data-view="viewings"><span>◷</span> Viewings</button>
+      <button class="nav-item" data-view="tasks"><span>✓</span> Tasks & Reminders</button>
+      <button class="nav-item" data-view="reports"><span>▤</span> Reports</button>
+      <button class="nav-item" data-view="settings"><span>⚙</span> Settings & Data</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="avatar">DM</div><div><b>Demo Workspace</b><small>Not signed in</small></div><button id="resetDemo" title="Reset sample data" aria-label="Reset sample data">↻</button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><button id="mobileMenu" class="mobile-menu" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button><div class="crumb">Solace Home Management <span>/</span> <b id="pageCrumb">Dashboard</b></div><div class="top-actions"><span class="demo-pill">DEMO MODE</span><span class="top-avatar">DM</span></div></header>
+    <div class="notice" role="note"><b>DEMO PROTOTYPE ONLY:</b> examples are fictional. Changes stay temporarily in this tab and reset when it reloads; nothing is saved to browser storage. There is no real login, shared database, secure document storage, or production access control. Do not enter real customer information or passwords.</div>
+    <section id="viewRoot" class="view-root"></section>
+  </main>
+</div>
+<div id="modalRoot"></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>

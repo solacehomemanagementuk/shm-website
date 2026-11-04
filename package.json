@@ -1,0 +1,25 @@
+{
+  "name": "solace-home-management",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build:netlify": "node scripts/build-netlify.js",
+    "start": "node server/server.js",
+    "db:migrate": "node scripts/migrate.js",
+    "auth:bootstrap-admin": "node scripts/bootstrap-admin.js"
+  },
+  "dependencies": {
+    "argon2": "^0.44.0",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "nodemailer": "^7.0.7",
+    "pg": "^8.16.3"
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Secure Landlord Login for Solace Home Management.">
+  <meta name="theme-color" content="#F7F3EA">
+  <title>Landlord Login | Solace Home Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page auth-page">
+  <header class="site-header"><div class="header-main">
+    <a class="brand brand-header brand-header-home" href="index.html#top" aria-label="Solace Home Management home"><img class="brand-logo" src="assets/solace-logo.png" alt="Solace Home Management house emblem"><span class="brand-wording"><span class="brand-title">SOLACE HOME MANAGEMENT</span><span class="brand-tagline">Your Comfort, Our Responsibility</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation">Menu</button>
+    <nav id="mainNav" class="nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="overview.html">Overview</a><a href="services.html">Our Services</a><a href="browse-properties.html">Browse Properties</a><a href="list-your-property.html">List Your Property</a><a href="register-account.html">Register Account</a><a href="shm-portal.html">SHM Login</a><a href="contact.html" class="nav-cta">Contact Us</a></nav>
+  </div></header>
+  <main id="top">
+    <section class="page-hero registration-page-hero"><p class="eyebrow">SECURE ACCOUNT ACCESS</p><h1>Landlord Login</h1><p>Sign in to your Solace Home Management landlord account.</p></section>
+    <section class="auth-section"><div class="auth-card">
+      <div class="auth-card-heading"><p class="eyebrow">LANDLORD ACCOUNT</p><h2>Welcome back</h2><p>Use your username or email address and password.</p></div>
+      <form class="auth-form" data-login-form data-role="landlord" novalidate>
+        <label>Username or Email Address<input name="identifier" type="text" autocomplete="username" maxlength="254" required></label>
+        <label>Password<span class="password-field"><input name="password" type="password" autocomplete="current-password" maxlength="128" required><button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button></span></label>
+        <button class="button button-dark auth-submit" type="submit">Landlord Login <span aria-hidden="true">→</span></button>
+        <p class="auth-message" data-auth-message role="status" aria-live="polite"></p>
+      </form>
+      <p class="auth-alternate">New to Solace Home Management? <a href="landlord-registration.html">Landlord Registration</a></p>
+    </div></section>
+  </main>
+  <footer class="footer"></footer>
+  <script src="script.js"></script><script src="auth.js"></script>
+</body>
+</html>
